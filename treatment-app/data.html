@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Data - Treatment</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Treatment System</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Input Data</a></li>
+                <li><a href="data.html" class="active">Lihat Data</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="data-section">
+            <div class="data-header">
+                <h1>Data Treatment</h1>
+                <div class="data-actions">
+                    <span id="totalData" class="info-badge">Total: 0 data</span>
+                    <button id="deleteAllBtn" class="btn btn-danger" onclick="deleteAllData()">Hapus Semua Data</button>
+                </div>
+            </div>
+
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">📊</div>
+                <h2>Belum Ada Data</h2>
+                <p>Tidak ada data yang ditampilkan. Silakan <a href="index.html">isi form</a> terlebih dahulu.</p>
+            </div>
+
+            <div id="tableContainer" style="display: none;">
+                <div class="table-wrapper">
+                    <table id="dataTable" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>NIM</th>
+                                <th>Jenis Layanan</th>
+                                <th>Keterangan</th>
+                                <th>Tanggal Input</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dataBody">
+                            <!-- Data akan diisi oleh JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-footer">
+                    <p>Klik tombol hapus untuk menghapus data tertentu</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="export-section">
+            <h2>Opsi Ekspor</h2>
+            <div class="export-buttons">
+                <button onclick="exportToCSV()" class="btn btn-info">📥 Export ke CSV</button>
+                <button onclick="printData()" class="btn btn-info">🖨️ Print Data</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Treatment System. Universitas Mikroskil - Sistem Informasi</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Load dan tampilkan data saat halaman dibuka
+        document.addEventListener('DOMContentLoaded', function() {
+            displayData();
+        });
+    </script>
+</body>
+</html>

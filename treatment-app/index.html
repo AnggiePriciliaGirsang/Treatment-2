@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Input Data - Treatment</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Treatment System</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Input Data</a></li>
+                <li><a href="data.html">Lihat Data</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-section">
+            <h1>Formulir Input Data</h1>
+            <p class="subtitle">Silakan isi form berikut untuk menambahkan data baru</p>
+
+            <form id="dataForm" class="form-group">
+                <div class="form-field">
+                    <label for="nama">Nama *</label>
+                    <input 
+                        type="text" 
+                        id="nama" 
+                        name="nama" 
+                        placeholder="Masukkan nama lengkap"
+                        required
+                    >
+                    <span class="error-msg" id="error-nama"></span>
+                </div>
+
+                <div class="form-field">
+                    <label for="nim">NIM *</label>
+                    <input 
+                        type="text" 
+                        id="nim" 
+                        name="nim" 
+                        placeholder="Masukkan NIM (contoh: 2024001)"
+                        required
+                    >
+                    <span class="error-msg" id="error-nim"></span>
+                </div>
+
+                <div class="form-field">
+                    <label for="layanan">Jenis Layanan *</label>
+                    <select id="layanan" name="layanan" required>
+                        <option value="">-- Pilih Jenis Layanan --</option>
+                        <option value="Konsultasi">Konsultasi</option>
+                        <option value="Perawatan">Perawatan</option>
+                        <option value="Pemeriksaan">Pemeriksaan</option>
+                        <option value="Vaksinasi">Vaksinasi</option>
+                        <option value="Operasi">Operasi</option>
+                    </select>
+                    <span class="error-msg" id="error-layanan"></span>
+                </div>
+
+                <div class="form-field">
+                    <label for="keterangan">Keterangan</label>
+                    <textarea 
+                        id="keterangan" 
+                        name="keterangan" 
+                        placeholder="Masukkan keterangan tambahan (opsional)"
+                        rows="5"
+                    ></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Simpan Data</button>
+                    <button type="reset" class="btn btn-secondary">Bersihkan Form</button>
+                </div>
+            </form>
+
+            <div id="successMessage" class="alert alert-success">
+                ✓ Data berhasil disimpan! Redirect ke halaman data dalam 2 detik...
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Treatment System. Universitas Mikroskil - Sistem Informasi</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
